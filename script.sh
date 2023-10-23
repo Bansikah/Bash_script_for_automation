@@ -17,15 +17,17 @@ system_inspection() {
     sudo ps -ef > processes.txt
     echo "List of running processes saved to processes.txt"
 
-    # Check disk usage, identify directories consuming the most space, and output to a file
-    #du -h / | sort -rh > disk_usage.txt
-    du -h > disk_usage.txt
-    echo "Disk usage summary saved to disk_usage.txt"
-
-    # Check active network connections and output to a file
+# Check active network connections and output to a file
     netstat -an > network_connections.txt
     echo "Active network connections saved to network_connections.txt"
 
+  
+    # Check disk usage, identify directories consuming the most space, and output to a file
+    #du -h / | sort -rh > disk_usage.txt
+    sudo du -h > disk_usage.txt
+    echo "Disk usage summary saved to disk_usage.txt"
+
+    
     # Summarize the findings in a brief report
     echo "System Inspection and Report Summary:"
     echo "-----------------------------------"
